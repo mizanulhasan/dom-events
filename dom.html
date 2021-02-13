@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring DOM</title>
+    <style>
+        article{
+            border: 2px solid red;
+            margin: 2px 2px;
+            padding: 5px 5px;
+            border-radius: 25px;
+        }
+        .special h3{
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>Exploring DOM</h3>
+            <article id="first-article">
+                <h3>article=1</h3>
+                <p class="author" title="I am the most important author." id="bestseller">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ipsam, fugiat expedita non magnam perferendis earum fuga facilis ducimus eius est laborum odio tenetur libero quis atque. Harum, rerum autem.</p>
+            </article>
+            <article class="special">
+                <h3>article=2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ipsam, fugiat expedita non magnam perferendis earum fuga facilis ducimus eius est laborum odio tenetur libero quis atque. Harum, rerum autem.</p>
+            </article>
+            <article class="special">
+                <h3>article=3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ipsam, fugiat expedita non magnam perferendis earum fuga facilis ducimus eius est laborum odio tenetur libero quis atque. Harum, rerum autem.</p>
+            </article>
+            <article>
+                <ul id="giftlist">
+                    <li>Gift Item 5</li>
+                    <li>Gift item 6</li>
+                </ul>
+            </article>
+        </section>
+        <section>
+            <h3>Exploring DOM</h3>
+            <p id="first">my first paragraph</p>
+            <p>my second paragraph.</p>
+        </section>
+    </main>
+    <script>
+       /* document.body.style.backgroundColor="tomato";
+        var author = document.querySelectorAll('.special h3');
+        for (var i = 0; i <author.length; i++){
+            var element = author[i];
+            // console.log(element.innerHTML);
+            element.setAttribute('title','All authors are same');
+            element.innerHTML = 'Lekhok ' + i;
+            element.style.backgroundColor = 'lightblue';
+            element.style.margin = '5px';
+        }*/
+            const article = document.getElementById('first-article');
+            const newParagraph = document.createElement('p');
+            newParagraph.innerHTML = 'This is added by javascript';
+            article.appendChild(newParagraph);
+
+            const ul = document.getElementById('giftlist');
+            const newgift = document.createElement('li');
+            newgift.innerHTML = 'Gift 7';
+            ul.appendChild(newgift);
+    </script>
+</body>
+</html>
